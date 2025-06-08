@@ -1,0 +1,28 @@
+html, body {
+    margin: 0;
+    height:100%;
+    width:100%;
+    padding:0;
+}
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin:0px;
+#  justify-content: center;
+#  align-items: center;
+#  padding: 0rem;
+  box-sizing: border-box;
+}
+.hidden {
+  display: none;
+}
+#first {
+ background-color: hsl(196 67% 45%);
+}
+#second {
+ background-color: hsl(316 67% 45%);
+}
+#third {
+ background-color: hsl(76 67% 45%);
+}
