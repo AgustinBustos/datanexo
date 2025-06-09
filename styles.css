@@ -10,6 +10,7 @@ html, body {
     width:100%;
     color:black;
     font-family: 'Inter', sans-serif;
+    font-size: 1vmax;
 }
 section {
   height: 100vh;
@@ -32,29 +33,10 @@ section {
 }
 form {
 	display: flex;
-height: 7vh;
+height: 9vh;
   margin-top: 2em;
 }
 
-#fname {
-  width: 45vw;
-  margin-right:2em;
-font-size: 1em;
-}
-#lname {
-  width: 45vw;
-}
-button {
-	color:white;
- background-color: hsl(196 37% 45%);
-  width: 100%;
-  height: 6vh;
-  margin-top: 0.5em;
-font-size: 1.5em;
-}
-# input::placeholder {
-#	padding-left:1.5em;
-# }
 input[type=text] {
 #  width: 100%;
   padding: 12px 20px;
@@ -67,6 +49,34 @@ input[type=text] {
 }
 input[type=text]:focus {
   border: 3px solid #555;
+}
+
+#fname {
+#  width: 45vw;
+  width: 50%;
+  margin-right:2em;
+#  font-size: 1em;
+}
+#lname {
+#  width: 45vw;
+  width: 50%;
+}
+# input::placeholder {
+#	padding-left:1.5em;
+# }
+button {
+	color:white;
+ background-color: hsl(196 37% 45%);
+  width: 100%;
+  height: 6vh;
+  margin-top: 0.5em;
+font-size: 1.5em;
+}
+
+#smaletter {
+font-size:0.9em;
+text-align:center;
+margin-top:0.2em;
 }
 h1 {
 font-size: 3.5em;
@@ -114,4 +124,14 @@ font-weight:normal;
 #third {
  background-color: hsl(76 95% 98%);
  }
+@media only screen and (max-width: 500px) {
 
+   body { 
+      font-size: 2vmax; 
+   }
+   #left {
+
+     padding: 0em;
+
+}
+}
