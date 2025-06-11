@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="chart.js" defer></script>
 </head>
 <body>
 
@@ -19,13 +21,16 @@
   <input type="text" id="fname" name="fname" placeholder="Name">
   <input type="text" id="lname" name="lname" placeholder="Email">
 </form>
-<button>Let's have a meeting!!  </button>
+<button id="hover-target">Let's have a meeting!!  </button>
 <p id="smaletter"> We'll never share your info with anyone. </p>
 </div>
-<div id="right" class ="hide-if-narrow">
+<!--<div id="right" class ="hide-if-narrow"> -->
+
 
 <!--<img src="4UcoGB01.svg" width="100%" height="100%" />-->
-</div>
+<!--</div>-->
+
+<div id="chart"></div>
 </section>
 <section id="second">
 <h3>philosophy</h3>
