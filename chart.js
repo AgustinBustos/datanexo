@@ -1,11 +1,13 @@
 
 // import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
-const width = 800;
-const height = 600;
-const m = 58;    // number of samples per layer
-const n = 35;    // number of layers
-const k = 8;    // bumps per layer
+//const width = 800;
+const width = 0.38*window.innerWidth;
+// const height = 600;
+const height = 0.8*window.innerHeight;
+const m = 100;    // number of samples per layer
+const n = 50;    // number of layers
+const k = 2;    // bumps per layer
 
 const x = d3.scaleLinear().domain([0, m - 1]).range([0, width]);
 const y = d3.scaleLinear().range([height, 0]);
@@ -50,21 +52,57 @@ a[i] += x * Math.exp(-w * w);
 //
 //
 
+// function randomize() {
+//   const raw = d3.transpose(
+//     Array.from({ length: n }, () => {
+//       const series = bumps(m, k);
+//       //series[0] = 0; // Force the leftmost x (index 0) to be 0
+// console.log('prev');
+// console.log(series);
+//       for (let i = 0; i < series.length;++i) {
+// //console.log((i**2/series.length**2)*series[i]);
+//       //series[i] =(i**2/series.length**2)*series[i]; // Force the leftmost x (index 0) to be 0
+//       //series[i] =(i/series.length)*series[i]; // Force the leftmost x (index 0) to be 0
+//       series[i] =(1-(i**0.5/series.length**0.5))*series[i]; // Force the leftmost x (index 0) to be 0
+//       };
+// console.log('post');
+// console.log(series);
+// 
+//       return series;
+//     })
+//   );
+// 
+//   const layers = stack(raw);
+// 
+//   y.domain([
+//     d3.min(layers, l => d3.min(l, d => d[0])),
+//     d3.max(layers, l => d3.max(l, d => d[1]))
+//   ]);
+// 
+//   return layers;
+// }
+
+
 function randomize() {
   const raw = d3.transpose(
     Array.from({ length: n }, () => {
       const series = bumps(m, k);
-      //series[0] = 0; // Force the leftmost x (index 0) to be 0
-console.log('prev');
-console.log(series);
-      for (let i = 0; i < series.length;++i) {
-//console.log((i**2/series.length**2)*series[i]);
-      //series[i] =(i**2/series.length**2)*series[i]; // Force the leftmost x (index 0) to be 0
-      //series[i] =(i/series.length)*series[i]; // Force the leftmost x (index 0) to be 0
-      series[i] =(1-(i**0.5/series.length**0.5))*series[i]; // Force the leftmost x (index 0) to be 0
-      };
-console.log('post');
-console.log(series);
+
+      // Boost the first element so that the total at x = 0 is large
+       for (let i = 0; i < series.length;++i) {
+       series[i] =(1-(i**1/series.length**1))*series[i]; // Force the leftmost x (index 0) to be 0
+       };
+//for (let i = 0; i < series.length/15;++i) {
+//       if (series[i]>=1){
+//       series[i] =0.9*(1-(i**2/series.length**2))*series[i]; // Force the leftmost x (index 0) to be 0
+//       };
+//        series[i] =2*(1-(i**2/series.length**2))*series[i]; // Force the leftmost x (index 0) to be 0
+// 
+//
+//};
+//
+//      series[0] = 1; // You can tweak this value as needed
+//console.log(series);
 
       return series;
     })
@@ -72,19 +110,28 @@ console.log(series);
 
   const layers = stack(raw);
 
-  y.domain([
-    d3.min(layers, l => d3.min(l, d => d[0])),
-    d3.max(layers, l => d3.max(l, d => d[1]))
-  ]);
+  // Fix y domain: min = 0, max = total height of stack at x = 0
+  const maxAtZero = d3.max(layers, l => l[0][1]);
+  y.domain([0, maxAtZero]);
 
   return layers;
 }
-const svg = d3.create("svg")
-.attr("viewBox", [0, 0, width, height])
-.attr("width", width)
-.attr("height", height)
-.attr("style", "max-width: 100%; height: auto;");
+// const svg = d3.create("svg")
+// .attr("viewBox", [0, 0, width, height])
+// .attr("width", width)
+// .attr("height", height)
+// .attr("style", "max-width: 100%; height: auto;");
 
+// const svg = d3.create("svg")
+//   .attr("viewBox", [0, 0, width, height])
+//   .attr("width", "100vw")
+//   .attr("height", "100vh")  //.attr("style", "display: block;");
+//   .attr("style", "display: block; margin: 0; padding: 0;");
+const svg = d3.create("svg")
+  .attr("viewBox", [0, 0, width, height])
+  .attr("width", "100%")
+  .attr("height", "100%")
+  .style("display", "block");
 document.getElementById("chart").appendChild(svg.node());
 
 //const path = svg.selectAll("path")

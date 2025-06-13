@@ -11,6 +11,7 @@ html, body {
     color:black;
     font-family: 'Inter', sans-serif;
     font-size: 1vmax;
+#    overflow-x: hidden;
 }
 section {
   height: 100vh;
@@ -28,8 +29,13 @@ section {
 #right {
 
   flex-direction: column;
+  height:100%;
 
   width: 45vw;
+}
+#chart {
+height:100%;
+width:100%;
 }
 form {
 	display: flex;
@@ -120,7 +126,8 @@ font-weight:normal;
 
 }
 #second {
- background-color: hsl(316 30% 98%);
+# background-color: hsl(316 30% 98%);
+ background-color: hsl(316 30% 9%);
  }
 #third {
  background-color: hsl(76 30% 98%);
