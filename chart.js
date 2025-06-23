@@ -2,7 +2,7 @@
 // import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
 //const width = 800;
-const width = 0.38*window.innerWidth;
+const width = 0.45*window.innerWidth;
 // const height = 600;
 const height = window.innerHeight;
 const m = 100;    // number of samples per layer
@@ -11,6 +11,13 @@ const k = 2;    // bumps per layer
 console.log(height)
 const x = d3.scaleLinear().domain([0, m - 1]).range([0, width]);
 const y = d3.scaleLinear().range([height, 0]);
+const palette = [
+  "hsl(316, 30%, 9%)",    // dark magenta (your base)
+  "hsl(200, 60%, 40%)",   // strong teal-blue
+  "hsl(45, 100%, 50%)",   // bright gold
+  "hsl(140, 50%, 35%)",   // deep green
+  "hsl(0, 80%, 50%)"      // vibrant red
+]
 const z = d3.interpolateCool;
 // console.log(x)
 const area = d3.area()
@@ -80,8 +87,13 @@ const path = svg.selectAll("path")
 .data(randomize())
 .join("path")
 .attr("d", area)
-.attr("fill", () => z(Math.random()));
+//.attr("fill", () => z(Math.random()));
+.attr("fill", (d, i) => palette[i % palette.length]);
+
+
+
 function animateOnce() {
+
   path
     .data(randomize())
     .transition()

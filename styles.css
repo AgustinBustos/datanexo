@@ -33,6 +33,7 @@ section {
   height:100%;
 
   width: 45vw;
+#  background-color: hsl(316 90% 90%);
 }
 #chart {
 height:100%;
@@ -56,6 +57,7 @@ input[type=text] {
 }
 input[type=text]:focus {
   border: 3px solid #555;
+  border-color: hsl(316 70% 19%);
 }
 
 #fname {
@@ -63,27 +65,41 @@ input[type=text]:focus {
   width: 50%;
   margin-right:2em;
 #  font-size: 1em;
+ border-radius: 15px 3px 3px 3px;
 }
 #lname {
 #  width: 45vw;
   width: 50%;
+ border-radius: 3px 15px 3px 3px;
 }
 # input::placeholder {
 #	padding-left:1.5em;
 # }
 button {
 	color:white;
- background-color: hsl(196 37% 45%);
+	border-radius: 3px 3px 15px 15px;
+ background-color: hsl(316 30% 9%);
   width: 100%;
   height: 6vh;
   margin-top: 0.5em;
 font-size: 1.5em;
+cursor: pointer;
 }
 
+#first button:hover {
+ background-color: hsl(316 70% 12%);
+}
 #smaletter {
 font-size:0.9em;
 text-align:center;
 margin-top:0.2em;
+  width: 100%;
+font-weight:normal;
+  border: 0;
+  padding:0;
+
+  margin-top: 0;
+
 }
 h1 {
 font-size: 3.5em;
@@ -129,10 +145,87 @@ font-weight:normal;
 #second {
 # background-color: hsl(316 30% 98%);
  background-color: hsl(316 30% 9%);
+ color: hsl(196 30% 98%);	
+ justify-content: center;
+ align-items: center;
+
+
  }
+h3 {
+font-size: 3em;
+font-weight:bold;
+  border: 0;
+  padding:1em;
+
+  margin-top: 0.5em;
+
+}
+h4 {
+font-size: 2em;
+# font-style:italic;
+font-weight:bold;
+  border: 0;
+  padding:1em;
+
+  margin-top: 0.5em;
+
+}
+h5 {
+font-size: 1.5em;
+font-style:italic;
+font-weight:bold;
+  border: 0;
+  padding:0.8em;
+
+  margin-top: 0.5em;
+
+}
+li {
+font-size: 1.2em;
+font-weight:normal;
+  border: 0;
+  padding:0.3em;
+
+  margin-top: 0.5em;
+
+}
+#more-btn {
+ background-color: hsl(196 30% 98%);
+
+ color:black;
+
+font-weight:bold;
+  width: 15%;
+}
+#more-btn:hover {
+ background-color: hsl(196 10% 88%);
+}
+p {
+
+  width: 80%;
+font-size: 1.5em;
+font-weight:normal;
+  border: 0;
+  padding:0.2em;
+
+  margin-top: 1em;
+
+}
 #third {
- background-color: hsl(76 30% 98%);
+# background-color: hsl(76 30% 98%);
+ background-color: hsl(316 30% 9%);
+ color:hsl(196 30% 98%);
+  padding-top: 5em;
+  padding-left: 5em;
+
  }
+#lasto {
+  padding-left: 6em;
+
+
+
+}
+
 @media only screen and (max-width: 500px) {
 
    body { 
