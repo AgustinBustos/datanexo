@@ -98,7 +98,7 @@ font-weight:normal;
   border: 0;
   padding:0;
 
-  margin-top: 0;
+  margin-top: 0.2em;
 
 }
 h1 {
@@ -166,22 +166,23 @@ font-size: 2em;
 font-weight:bold;
   border: 0;
   padding:1em;
-
   margin-top: 0.5em;
 
 }
 h5 {
-font-size: 1.5em;
+font-size: 1.7em;
 font-style:italic;
 font-weight:bold;
   border: 0;
   padding:0.8em;
+  padding-top:0;
+text-decoration: underline hsl(140, 50%, 35%);
+cursor: pointer;
 
-  margin-top: 0.5em;
 
 }
 li {
-font-size: 1.2em;
+font-size: 1.4em;
 font-weight:normal;
   border: 0;
   padding:0.3em;
@@ -189,21 +190,27 @@ font-weight:normal;
   margin-top: 0.5em;
 
 }
+ul li::marker {
+    color: hsl(0, 80%, 50%);
+}
+ol li::marker {
+    color: hsl(200, 60%, 40%);
+}
 #more-btn {
  background-color: hsl(196 30% 98%);
 
- color:black;
+ color:hsl(316 30% 9%);
 
 font-weight:bold;
   width: 15%;
 }
 #more-btn:hover {
- background-color: hsl(196 10% 88%);
+ background-color: hsl(316 10% 88%);
 }
 p {
 
   width: 80%;
-font-size: 1.5em;
+font-size: 1.3em;
 font-weight:normal;
   border: 0;
   padding:0.2em;
@@ -220,7 +227,7 @@ font-weight:normal;
 
  }
 #lasto {
-  padding-left: 6em;
+  padding-left: em;
 
 
 
