@@ -166,20 +166,74 @@ font-size: 2em;
 font-weight:bold;
   border: 0;
   padding:1em;
-  margin-top: 0.5em;
+  padding-bottom:0em;
+#  margin-top: 0.5em;
+#  padding-right:0em;
+  background-color:hsl(316 30% 3%);
+  height:100%;
 
 }
 h5 {
 font-size: 1.7em;
 font-style:italic;
 font-weight:bold;
-  border: 0;
   padding:0.8em;
-  padding-top:0;
-text-decoration: underline hsl(140, 50%, 35%);
-cursor: pointer;
+#  padding-top:0;
+# text-decoration: underline hsl(140, 50%, 35%);
+# cursor: pointer;
+# background-color: black;
+
+# border-radius: 3px 15px 3px 3px;
+# border:hsl(316 30% 3%);
+# border-style:solid;
+# border-width: 1px 10px 10px 1px;
+# border: 0;
+}
+#beliefs {
+# border-radius: 3px 15px 3px 3px;
+ border:hsl(316 30% 3%);
+ border-style:solid;
+# border-width: 1px 10px 10px 1px;
+ border-width: 0px 10px 10px 0px;
+ border-radius: 3px 15px 15px 3px;
+ justify-content: center;
+ justify-content: space-around;
+ align-items: center;
+display:flex;
+ margin-bottom:5em;
+ padding:1em;
+ padding-left:0;
+ width:70vw;
+ height:20vh;
+ transition: transform .2s; /* Animation */
+
+}
+#beliefs:hover {
+  transform: scale(1.04); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+#conclusion {
+# border-radius: 3px 15px 3px 3px;
+ border-radius: 3px 15px 15px 3px;
+ border:hsl(316 30% 3%);
+ border-style:solid;
+# border-width: 1px 10px 10px 1px;
+ border-width: 0px 10px 10px 0px;
+ justify-content: center;
+ justify-content: space-around;
+ align-items: center;
+display:flex;
+margin-left:4em;
+margin-right:4em;
+ padding:1em;
+ padding-left:0;
+ width:90vw;
+ height:40vh;
+ transition: transform .2s; /* Animation */
 
 
+}
+#conclusion:hover {
+  transform: scale(1.04); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 li {
 font-size: 1.4em;
@@ -189,6 +243,13 @@ font-weight:normal;
 
   margin-top: 0.5em;
 
+}
+ol {
+margin-left:4em;
+}
+ul {
+margin-bottom:2em;
+margin-top:2em;
 }
 ul li::marker {
     color: hsl(0, 80%, 50%);
@@ -218,6 +279,7 @@ font-weight:normal;
   margin-top: 1em;
 
 }
+
 #third {
 # background-color: hsl(76 30% 98%);
  background-color: hsl(316 30% 9%);
