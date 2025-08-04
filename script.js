@@ -8,7 +8,7 @@ btn3.addEventListener('mousedown', () => {
     name=document.getElementById('fname').value.replaceAll(" ", '%20');
     email=document.getElementById('lname').value.replaceAll(" ", '%20');
 	console.log(name,email);
-     window.location = "https://calendly.com/agustinbustosbarton/30min?name="+name+"&email="+email;
+     window.location = "https://calendly.com/kevinyoel9/30min?name="+name+"&email="+email;
   });
 
 /*  btn.addEventListener('mousedown', () => {
